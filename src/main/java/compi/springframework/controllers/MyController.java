@@ -12,9 +12,7 @@ public class MyController {
         this.greetingService = greetingService;
     }
 
-    public String hello(){
-        System.out.println("Hello!!! ");
-
+    public String hello() {
         return greetingService.sayGreeting();
     }
 }
