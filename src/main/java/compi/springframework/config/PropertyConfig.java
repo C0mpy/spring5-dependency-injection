@@ -4,11 +4,8 @@ import compi.springframework.beans.FakeDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 @Configuration
-@PropertySource("classpath:datasource.properties")
 public class PropertyConfig {
 
     @Value("${compi.username}")
@@ -17,7 +14,7 @@ public class PropertyConfig {
     @Value("${compi.password}")
     String passwrod;
 
-    @Value("${compi.dburl}")
+    @Value("${compi.url}")
     String url;
 
     @Bean
@@ -27,13 +24,6 @@ public class PropertyConfig {
         fakeDataSource.setPassword(passwrod);
         fakeDataSource.setUrl(url);
         return fakeDataSource;
-    }
-
-    @Bean
-    // this is what handles the properties files and allows us to use @Value
-    public static PropertySourcesPlaceholderConfigurer properties() {
-        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-        return propertySourcesPlaceholderConfigurer;
     }
 
 }

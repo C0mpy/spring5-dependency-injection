@@ -1,4 +1,4 @@
 # spring5-dependency-injection
 Trying out different techniques for Spring's Dependency Injection 
 
-Using Config Class to specify .properties file to use as a data source 
+Example on using both application.properties and application.yml as datasource at the same time
