@@ -1,6 +1,6 @@
 package compi.springframework.beans;
 
-public class FakeDataSource {
+public class FakeJmsBroker {
 
     private String user;
     private String password;
